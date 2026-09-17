@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>How Long Would You Survive?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game">
+
+        <h1>HOW LONG WOULD YOU SURVIVE?</h1>
+
+        <div class="scenario">
+
+            <div class="emoji">🌋</div>
+
+            <h2>A VOLCANO SUDDENLY ERUPTS!</h2>
+
+            <p>
+                You have 30 seconds to decide what to do.
+            </p>
+
+        </div>
+
+
+        <div class="choices">
+
+            <button onclick="survive(1)">
+                🏃 RUN DOWNHILL
+            </button>
+
+            <button onclick="survive(2)">
+                ↔️ RUN SIDEWAYS
+            </button>
+
+            <button onclick="survive(3)">
+                📸 TAKE A SELFIE
+            </button>
+
+        </div>
+
+
+        <div id="result" class="result">
+
+    <h2 id="resultTitle"></h2>
+
+    <p id="resultText"></p>
+
+    <button onclick="nextScenario()">
+        ➡️ NEXT SCENARIO
+    </button>
+
+</div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
