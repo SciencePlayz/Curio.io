@@ -4,79 +4,162 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="google-site-verification" content="Yizc1RMxfuNdF0yAAt21340zduJU_2JuV_pNmiCk1H8" />
+    <meta name="google-site-verification"
+          content="Yizc1RMxfuNdF0yAAt21340zduJU_2JuV_pNmiCk1H8">
 
-<meta name="description" content="How Long Would You Survive? is an interactive science game where you make survival choices and discover the real science behind everyday dangers.A fun interactive science game for curious minds">
+    <meta name="description"
+          content="CURIO.IO — INTERACTIVE EXPERIENCES ABOUT SCIENCE, PSYCHOLOGY, AND THE WEIRD THINGS AROUND US.">
 
-    <title>How Long Would You Survive? | Science Survival Game | Interactive Science Game</title>
+    <title>CURIO.IO | INTERACTIVE EXPERIENCES</title>
 
-    <meta property="og:title"
-      content="How Long Would You Survive?">
-
-<meta property="og:description"
-      content="Make the choice. Discover the science. How would YOU survive?">
-
-<meta property="og:type"
-      content="website">
-
-<meta property="og:url"
-      content="https://shlokshetty2014-collab.github.io/How-long-would-you-survive-/">
+    <meta property="og:title" content="CURIO.IO">
+    <meta property="og:description"
+          content="EXPLORE WEIRD SITUATIONS AND DISCOVER THE SCIENCE BEHIND THEM.">
+    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="game">
+    <main class="site">
 
-        <h1>HOW LONG WOULD YOU SURVIVE?</h1>
+        <!-- WEBSITE BANNER -->
 
-        <div class="scenario">
+        <section class="hero">
+            <div class="hero-image">
+    <img src="banner.png">
+</div>
+            </div>
 
-            <div class="emoji">🌋</div>
+            <h1 class="logo">CURIO.IO</h1>
 
-            <h2>A VOLCANO SUDDENLY ERUPTS!</h2>
+        </section>
 
-            <p>
-                You have 30 seconds to decide what to do.
+
+        <!-- GAME 1 -->
+
+        <section class="game-section">
+
+            <h2>🧪 HOW WOULD YOU SURVIVE?</h2>
+
+            <p class="subheading">MAKE A GOOD CHOICE...</p>
+
+            <div class="game">
+
+                <div class="scenario">
+
+                    <div class="emoji">🌋</div>
+
+                    <h3 id="survivalTitle">
+                        A VOLCANO SUDDENLY ERUPTS!
+                    </h3>
+
+                    <p id="survivalDescription">
+                        YOU HAVE 30 SECONDS TO DECIDE WHAT TO DO.
+                    </p>
+
+                </div>
+
+                <div class="choices">
+
+                    <button onclick="survive(1)">
+                        🏃 RUN DOWNHILL
+                    </button>
+
+                    <button onclick="survive(2)">
+                        ↔️ RUN SIDEWAYS
+                    </button>
+
+                    <button onclick="survive(3)">
+                        📸 TAKE A SELFIE
+                    </button>
+
+                </div>
+
+
+                <div id="result" class="result">
+
+                    <h3 id="resultTitle"></h3>
+
+                    <p id="resultText"></p>
+
+                    <button onclick="nextScenario()">
+                        ➡️ NEXT SCENARIO
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAME 2 -->
+
+        <section class="game-section weird-section">
+
+            <h2>🧠 WEIRD SITUATIONS</h2>
+
+            <p class="subheading">
+                HAVE YOU EXPERIENCED THESE?
             </p>
 
-        </div>
+
+            <!-- PSYCHOLOGY BUTTONS -->
+
+            <div class="psychology-buttons">
+
+                <button onclick="showExperience(0)">
+                    🚪 DOORWAY EFFECT
+                </button>
+
+                <button onclick="showExperience(1)">
+                    🌀 DÉJÀ VU
+                </button>
+
+                <button onclick="showExperience(2)">
+                    💭 TIP-OF-THE-TONGUE
+                </button>
+
+                <button onclick="showExperience(3)">
+                    👀 FEELING OF BEING WATCHED
+                </button>
+
+            </div>
 
 
-        <div class="choices">
+            <!-- PSYCHOLOGY RESULT -->
 
-            <button onclick="survive(1)">
-                🏃 RUN DOWNHILL
-            </button>
+            <div id="psychologyResult" class="psychology-result">
 
-            <button onclick="survive(2)">
-                ↔️ RUN SIDEWAYS
-            </button>
+                <h3 id="experienceTitle"></h3>
 
-            <button onclick="survive(3)">
-                📸 TAKE A SELFIE
-            </button>
+                <p id="experienceDescription"></p>
 
-        </div>
+                <button
+                    id="whyButton"
+                    onclick="showWhy()">
+                    WHY?
+                </button>
 
+                <div
+                    id="theory"
+                    class="theory">
 
-        <div id="result" class="result">
+                    <h4>THE PSYCHOLOGY</h4>
 
-    <h2 id="resultTitle"></h2>
+                    <p id="theoryText"></p>
 
-    <p id="resultText"></p>
+                </div>
 
-    <button onclick="nextScenario()">
-        ➡️ NEXT SCENARIO
-    </button>
+            </div>
 
-</div>
+        </section>
 
-    </div>
+    </main>
 
 
     <script src="script.js"></script>
