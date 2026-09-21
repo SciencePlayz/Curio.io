@@ -264,3 +264,204 @@ function showWhy() {
 /* START GAME */
 
 loadScenario();
+// ================================
+// GAME 3 — WHAT IF EARTH CHANGED?
+// ================================
+
+const earthScenarios = [
+
+    {
+        emoji: "🌙",
+
+        title: "WHAT IF THE MOON DISAPPEARED?",
+
+        question: "WHAT WOULD HAPPEN TO EARTH?",
+
+        options: [
+            "NOTHING MUCH",
+            "EARTH'S TIDES WOULD CHANGE DRAMATICALLY",
+            "EARTH WOULD IMMEDIATELY EXPLODE"
+        ],
+
+        correct: 1,
+
+        explanations: [
+            "NOT QUITE. The Moon has a major effect on Earth's tides. If it suddenly disappeared, the Sun would still create tides, but they would be much weaker. Earth's oceans and coastal ecosystems would be affected.",
+
+            "CORRECT! The Moon's gravity is responsible for most of Earth's tides. Without the Moon, tides would become much weaker. The Moon also helps stabilize Earth's rotation over very long periods of time.",
+
+            "WRONG. The Moon's disappearance would NOT make Earth explode. Earth's gravity and structure do not depend on the Moon holding the planet together. Earth would continue orbiting the Sun."
+        ]
+    },
+
+
+    {
+        emoji: "🌊",
+
+        title: "WHAT IF EARTH'S OCEANS SUDDENLY BECAME FRESHWATER?",
+
+        question: "WHAT WOULD HAPPEN TO LIFE IN THE OCEANS?",
+
+        options: [
+            "MOST MARINE ECOSYSTEMS WOULD BE MASSIVELY DISRUPTED",
+            "ALMOST NOTHING WOULD CHANGE",
+            "ALL OCEAN LIFE WOULD IMMEDIATELY TURN INTO FRESHWATER SPECIES"
+        ],
+
+        correct: 0,
+
+        explanations: [
+            "CORRECT! Most marine organisms are adapted to salty water. A sudden change to freshwater would drastically change the conditions they live in and could cause enormous disruption to marine food webs.",
+
+            "WRONG. Salt concentration is extremely important to marine organisms. Many species are adapted specifically to seawater, so suddenly removing the salt would create a huge environmental shock.",
+
+            "WRONG. Organisms cannot simply transform themselves into freshwater species. Adaptation happens across generations, not instantly. A sudden change would instead put many existing species under extreme environmental stress."
+        ]
+    },
+
+
+    {
+        emoji: "🌬️",
+
+        title: "WHAT IF EARTH'S ATMOSPHERE BECAME TWICE AS THICK?",
+
+        question: "WHAT WOULD CHANGE?",
+
+        options: [
+            "AIR RESISTANCE AND AIR PRESSURE WOULD INCREASE",
+            "EARTH WOULD STOP ROTATING",
+            "NOTHING WOULD CHANGE BECAUSE AIR IS INVISIBLE"
+        ],
+
+        correct: 0,
+
+        explanations: [
+            "CORRECT! A much denser atmosphere would produce greater air pressure and more air resistance. Aircraft, weather, falling objects and even the way sound travels through the atmosphere could be affected.",
+
+            "WRONG. Making the atmosphere thicker would not suddenly stop Earth's rotation. Earth's rotation is controlled by the planet's angular momentum, not simply by the thickness of its atmosphere.",
+
+            "WRONG. Invisible does not mean it has no physical effects. Air has mass and takes up space. A denser atmosphere would have measurable effects on pressure, motion and weather."
+        ]
+    }
+
+];
+
+
+let currentEarthScenario = 0;
+let selectedEarthAnswer = null;
+
+
+function loadEarthScenario() {
+
+    const scenario = earthScenarios[currentEarthScenario];
+
+    document.getElementById("earthEmoji").textContent =
+        scenario.emoji;
+
+    document.getElementById("earthTitle").textContent =
+        scenario.title;
+
+    document.getElementById("earthQuestion").textContent =
+        scenario.question;
+
+
+    const buttons =
+        document.querySelectorAll(".earth-choices button");
+
+
+    buttons.forEach((button, index) => {
+
+        button.textContent =
+            String.fromCharCode(65 + index) +
+            ") " +
+            scenario.options[index];
+
+        button.disabled = false;
+    });
+
+
+    document.getElementById("earthResult").style.display =
+        "none";
+
+    document.getElementById("earthWhy").style.display =
+        "none";
+
+    selectedEarthAnswer = null;
+}
+
+
+function answerEarth(choice) {
+
+    const scenario = earthScenarios[currentEarthScenario];
+
+    selectedEarthAnswer = choice;
+
+
+    const result =
+        document.getElementById("earthResult");
+
+    const resultTitle =
+        document.getElementById("earthResultTitle");
+
+    const resultText =
+        document.getElementById("earthResultText");
+
+    const whyText =
+        document.getElementById("earthWhyText");
+
+
+    result.style.display = "block";
+
+
+    if (choice === scenario.correct) {
+
+        resultTitle.textContent = "✅ CORRECT!";
+
+        resultText.textContent =
+            "THAT'S WHAT WOULD HAPPEN.";
+
+    } else {
+
+        resultTitle.textContent = "❌ NOT QUITE!";
+
+        resultText.textContent =
+            "TRY ANOTHER ANSWER OR CHECK WHY.";
+
+    }
+
+
+    // Hide the previous explanation
+    document.getElementById("earthWhy").style.display =
+        "none";
+
+
+    // Load the explanation for THIS specific answer
+    whyText.textContent =
+        scenario.explanations[choice];
+}
+
+
+function showEarthWhy() {
+
+    if (selectedEarthAnswer === null) {
+        return;
+    }
+
+    document.getElementById("earthWhy").style.display =
+        "block";
+}
+
+
+function nextEarthScenario() {
+
+    currentEarthScenario++;
+
+    if (currentEarthScenario >= earthScenarios.length) {
+        currentEarthScenario = 0;
+    }
+
+    loadEarthScenario();
+}
+
+
+loadEarthScenario();
