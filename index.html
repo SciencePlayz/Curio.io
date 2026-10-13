@@ -32,7 +32,6 @@
             <div class="hero-image">
     <img src="banner.png" alt="">
 </div>
-            </div>
 
             <h1 class="logo">Curio.io</h1>
 
@@ -159,8 +158,79 @@
 
         </section>
 
-    </main>
+  
+    <!-- GAME 3 -->
 
+<section class="game-section earth-section">
+
+    <h2>🌍 WHAT IF EARTH CHANGED?</h2>
+
+    <div class="earth-game">
+
+        <div class="earth-scenario">
+
+            <div class="emoji" id="earthEmoji">🌙</div>
+
+            <h3 id="earthTitle">
+                WHAT IF THE MOON DISAPPEARED?
+            </h3>
+
+            <p id="earthQuestion">
+                WHAT WOULD HAPPEN TO EARTH?
+            </p>
+
+        </div>
+
+
+        <div class="earth-choices">
+
+            <button onclick="answerEarth(0)">
+                A) NOTHING MUCH
+            </button>
+
+            <button onclick="answerEarth(1)">
+                B) EARTH'S TIDES WOULD CHANGE DRAMATICALLY
+            </button>
+
+            <button onclick="answerEarth(2)">
+                C) EARTH WOULD IMMEDIATELY EXPLODE
+            </button>
+
+        </div>
+
+
+        <div id="earthResult" class="earth-result">
+
+            <h3 id="earthResultTitle"></h3>
+
+            <p id="earthResultText"></p>
+
+            <button
+                id="earthWhyButton"
+                onclick="showEarthWhy()">
+                WHY?
+            </button>
+
+            <div
+                id="earthWhy"
+                class="earth-why">
+
+                <p id="earthWhyText"></p>
+
+            </div>
+
+            <button
+                onclick="nextEarthScenario()">
+                ➡️ NEXT SCENARIO
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
 
     <script src="script.js"></script>
 

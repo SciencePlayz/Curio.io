@@ -264,6 +264,7 @@ function showWhy() {
 /* START GAME */
 
 loadScenario();
+
 // ================================
 // GAME 3 — WHAT IF EARTH CHANGED?
 // ================================
